@@ -5,33 +5,59 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 20,
     },
-    header: {
-        backgroundColor: 'white',
-        color: 'black',
-        fontSize: 30,
-        paddingHorizontal: 5,
+    banner: {
+        marginVertical: 5
     },
-    scrollContainer: {
-        marginTop: 20,
-        height: 60,
+    bannerImageContainer: {
+        width: 366,
+        height: 190,
+        borderRadius: 20,
+    },
+    bannerImage: {
+        width: 366,
+        height: 190,
+        borderRadius: 20,
+    },
+    bannerWrapper: {
+        display: 'flex',
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        marginBottom: 6,
-        borderBottomWidth: 1,
-        borderColor: 'gray',
+        justifyContent: 'space-around',
+        alignItems: 'flex-end',
+        minHeight: 190
     },
-    itemContainer: {
-        marginRight: 20,
-        marginBottom: 10,
+    bannerContent: {
+        display: 'flex',
+        flexDirection: 'column',
     },
-    itemText: {
-        fontSize: 20,
-        color: 'black',
+    bannerItem: {
+        backgroundColor: 'white',
+        padding: 4,
+        paddingHorizontal: 8,
+        borderRadius: 6
     },
-    bannerText: {
-        fontSize: 20,
-        marginVertical: 20,
-        fontWeight: 'bold',
+    bannerItemText: {
+        fontWeight: 'bold'
     },
+    author: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 5,
+        marginVertical: 10
+    },
+    authorImage: {
+        width: 28,
+        height: 28,
+        borderRadius: 50
+    },
+    authorText: {
+        textDecorationLine: 'underline',
+        color: 'white'
+    },
+    bannerAction: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 4,
+        marginBottom: 10
+    }
 });
 export default styles

@@ -1,17 +1,14 @@
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
+import { Link, router } from 'expo-router';
 
 const LoginView = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleRegister = () => {
-        if (!email) {
-            Alert.alert('Error', 'Name and Email are required.');
-            return;
-        }
-        Alert.alert('Success', `Email: ${email}`);
+        router.navigate('/home');
     };
 
     return (
@@ -36,13 +33,13 @@ const LoginView = () => {
                 onChangeText={text => setPassword(text)}
             />
 
-            <Button mode="contained" buttonColor='#1E90FF' labelStyle={{ fontSize: 18, fontWeight: 'bold' }}  style={styles.button} onPress={handleRegister}>
+            <Button mode="outlined" textColor='black' buttonColor='#595959' labelStyle={{ fontSize: 18, fontWeight: 'bold', paddingVertical: 6 }} style={styles.button} onPress={handleRegister}>
                 Login
             </Button>
 
-            <View style={{marginTop: 16}}>
+            <View style={{ marginTop: 16 }}>
                 <Text style={styles.text}>
-                    Don't Have an Account ? Register
+                    Don't Have an Account ? <Link href={'/auth/register'}>Register</Link>
                 </Text>
             </View>
 
@@ -56,7 +53,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 32,
         backgroundColor: '#1A1A1A'
-      },
+    },
     header: {
         fontSize: 28,
         fontWeight: 'bold',

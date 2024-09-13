@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
+import { Link, router } from 'expo-router';
 
 const RegisterView = () => {
   const [name, setName] = useState('');
@@ -8,11 +9,7 @@ const RegisterView = () => {
   const [password, setPassword] = useState('');
 
   const handleRegister = () => {
-    if (!name || !email) {
-      Alert.alert('Error', 'Name and Email are required.');
-      return;
-    }
-    Alert.alert('Success', `Name: ${name}, Email: ${email}`);
+    router.navigate('/auth/login')
   };
 
   return (
@@ -44,13 +41,13 @@ const RegisterView = () => {
         value={password}
         onChangeText={text => setPassword(text)}
       />
-      <Button mode="outlined" textColor='black' buttonColor='white' labelStyle={{ fontSize: 18, fontWeight: 'bold' }} style={styles.button} onPress={handleRegister}>
+      <Button mode="outlined" textColor='black' buttonColor='#595959' labelStyle={{ fontSize: 18, fontWeight: 'bold' }} style={styles.button} onPress={handleRegister}>
         Register
       </Button>
 
       <View style={{marginTop: 16}}>
         <Text style={styles.text}>
-          Already Have an Account ? Login
+          Already Have an Account ? <Link href={'/auth/login'}>Login</Link>
         </Text>
       </View>
 

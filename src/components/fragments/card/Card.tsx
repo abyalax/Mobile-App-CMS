@@ -1,21 +1,21 @@
 import { View, Text, FlatList, Image } from 'react-native'
 import { styles } from './style'
 import { IconButton, Icon } from 'react-native-paper'
+import { timeSinceUpload } from '@/src/utils'
+import { router } from 'expo-router'
 
 interface Props {
   renderHeader: () => JSX.Element
-  data: { id: string, authorName: string, title: string, content: string }[]
+  data: { id: string, authorName: string, title: string, content: string, createdAt: string, like: number }[]
   handleLike: () => void
-  like: number
-  postTime: string
 }
 
 const Card = (props: Props) => {
-  const { renderHeader, data, handleLike, like, postTime } = props
-
+  const { renderHeader, data, handleLike } = props
   return (
     <View>
       <FlatList
+        onTouchEnd={() => router.navigate('/posts/details')}
         data={data}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
@@ -32,10 +32,10 @@ const Card = (props: Props) => {
               <View style={[styles.column, { gap: 10 }, { alignItems: 'flex-end' }]}>
                 <View style={[styles.row, styles.btn, { maxWidth: 80 }]}>
                   <IconButton icon="heart" size={18} onPress={() => handleLike} />
-                  <Text style={{ fontSize: 12 }}>{like}</Text>
+                  <Text style={{ fontSize: 12 }}>{item.like}</Text>
                 </View>
                 <View style={[styles.row, styles.btn, { maxWidth: 80, paddingVertical: 5, paddingHorizontal: 14 }]}>
-                  <Text style={{ fontSize: 13 }}>+{postTime}</Text>
+                  <Text style={{ fontSize: 13 }}>+{timeSinceUpload(new Date(item.createdAt))}</Text>
                 </View>
               </View>
             </View>

@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Morning, Alex</Text>
+        <Text style={styles.title}>Good Night, Abya🙌</Text>
         <IconButton icon={"bell-ring-outline"} iconColor='black' onPress={_handleSearch}/>
       </View>
 

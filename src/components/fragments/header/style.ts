@@ -21,7 +21,6 @@ export const styles = StyleSheet.create({
         maxHeight: 40,
         flexDirection: 'row',
         paddingHorizontal: 10,
-        marginBottom: 6,
         borderBottomWidth: 1,
         borderColor: 'gray',
         paddingBottom: 5
@@ -30,7 +29,7 @@ export const styles = StyleSheet.create({
         marginRight: 20,
     },
     itemText: {
-        fontSize: 20,
+        fontSize: 15,
         color: 'black',
     },
 })
