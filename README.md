@@ -1,5 +1,7 @@
 # Welcome to your Expo app 👋
 
+Reference design [click here](https://dribbble.com/shots/21490438-Bookverse-News-Article-Apps)
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
